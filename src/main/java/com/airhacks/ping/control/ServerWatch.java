@@ -4,7 +4,8 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
 import java.lang.management.MemoryUsage;
 import java.lang.management.OperatingSystemMXBean;
-import java.time.ZonedDateTime;
+import java.util.Date;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
@@ -19,7 +20,7 @@ import javax.json.JsonObject;
 @Singleton
 public class ServerWatch {
 
-    private ZonedDateTime startTime;
+    private Date startTime;
     private MemoryUsage heapUsageAtStartTime;
     private MemoryMXBean memoryMxBean;
 
@@ -32,10 +33,10 @@ public class ServerWatch {
     }
 
     void initializeStartTime() {
-        this.startTime = ZonedDateTime.now();
+        this.startTime = new Date();
     }
 
-    public ZonedDateTime getDateTime() {
+    public Date getDateTime() {
         return this.startTime;
     }
 

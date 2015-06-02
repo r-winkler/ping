@@ -2,3 +2,4 @@ target/
 /nb-configuration.xml
 *.sh
 /release.properties
+/bin/

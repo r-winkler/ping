@@ -38,7 +38,9 @@ public class PingsResource {
         JsonObjectBuilder builder = Json.createObjectBuilder();
         Properties properties = System.getProperties();
         Set<Map.Entry<Object, Object>> entries = properties.entrySet();
-        entries.stream().forEach(e -> builder.add(String.valueOf(e.getKey()), String.valueOf(e.getValue())));
+        for (Map.Entry<Object, Object> e : entries) {
+        	builder.add(String.valueOf(e.getKey()), String.valueOf(e.getValue()));
+		}
         return builder.build();
     }
 
