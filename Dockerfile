@@ -1,2 +1,2 @@
-FROM renewinkler84/wildfly
+FROM renewinkler/wildfly
 ADD ping.war /opt/jboss/wildfly/standalone/deployments/
